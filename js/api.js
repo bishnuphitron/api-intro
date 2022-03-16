@@ -16,6 +16,11 @@ function loadPosts() {
     .then(data => console.log(data));
 }
 
-function displayUsers(data) {
-  console.log(data);
+function displayUsers(users) {
+  const ul = document.getElementById('users');
+  for (const user of users) {
+    const li = document.createElement('li');
+    li.innerText = `Name: ${user.name} - Email: ${user.email}`;
+    ul.appendChild(li);
+  }
 }
